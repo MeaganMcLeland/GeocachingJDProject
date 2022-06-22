@@ -1,0 +1,35 @@
+Create a data source:
+	-table 1 consists of (geocache objects/containers)
+		--ID num
+			*unique
+		--name
+			*unique
+		--coordinate
+			*latitude
+				!only between -90 and +90 degrees
+			*longitude
+				!only between -180 and +180 degrees
+
+	-table 2 consists of (list of items that can be placed in a geocache - item object)
+		--ID num
+			*unique
+		--name
+			*should be unique
+			*max of 50 characters
+			*only letters, numbers, and spaces
+		--an optional associated geocache
+			*foreign key with ID num in table 1
+		-- dates for when the item is active
+			*start date
+			*end date
+
+Create a RESTful API:
+	-returns list of active items in a *given* geocache
+	-be able to add new item to data source
+	-be able to move item from one cache to another
+		--only *active* items should be allowed to move
+		--items cannot be moved to a cache that already contains 3 or more items
+
+
+
+
